@@ -27,186 +27,102 @@
                "esri/layers/GraphicsLayer",
                "esri/Basemap",
                "esri/layers/VectorTileLayer",
-               "esri/layers/TileLayer",], 
-              function (esriConfig,Map, MapView, Graphic, GraphicsLayer, Basemap, VectorTileLayer) {
+               ], 
+              function (esriConfig,Map, MapView, Graphic, GraphicsLayer, Basemap, VectorTileLayer) 
+                 {
 
         esriConfig.apiKey = "AAPKf95b727aad5c49ef84545ba2e1bece87l9giQmhenhn7erNtb7sWNCeu7I4B2xKnppb3xVVl4uoDcb-i7zEdLgPMQXVSyjgq";
 
         
-        const vectorTileLayer = new VectorTileLayer({
-    portalItem: {
-      id: "21812b28afea4091bc57472297aa73d4" // WaterColor Map
-    },
-    opacity: .75
-  });
-  const basemap = new Basemap({
-    baseLayers: [
-
-      
-      vectorTileLayer
-
-    ]
-  }); 
-        const map = new Map({
-          basemap: basemap, // Basemap layer service
+  const vectorTileLayer = new VectorTileLayer
+        ({
+             portalItem: { id: "21812b28afea4091bc57472297aa73d4" // WaterColor Map },
+             opacity: .75
+         });
+  const basemap = new Basemap
+        ({
+            baseLayers: [ vectorTileLayer ]
+        }); 
+  const map = new Map
+        ({
+           basemap: basemap, // Basemap layer service
         });
 
-        const view = new MapView({
-          map: map,
-          center: [74.32708, 14.01663], // Longitude, latitude
-          zoom: 7, // Zoom level
-          container: "viewDiv" // Div element
+  const view = new MapView
+        ({
+            map: map,
+            center: [14.01663, 74.32708], // Longitude, latitude
+            zoom: 7, // Zoom level
+            container: "viewDiv" // Div element
         });
         
-         const graphicsLayer = new GraphicsLayer();
- map.add(graphicsLayer);
+  const graphicsLayer = new GraphicsLayer();
+  map.add(graphicsLayer);
 
 
     // Create a line geometry
- const polyline = {
-    type: "polyline",
-    paths: [
-[
-            74.32515978813171,
-            14.02034458505898
-          ],
-          [
-            74.32549238204956,
-            14.020448677250338
-          ],
-          [
-            74.32600736618042,
-            14.020282129721519
-          ],
-          [
-            74.32629704475403,
-            14.020125991303455
-          ],
-          [
-            74.32642579078674,
-            14.020032308201605
-          ],
-          [
-            74.32679057121275,
-            14.019595119887313
-          ],
-          [
-            74.32725191116333,
-            14.018491736152173
-          ],
-          [
-            74.32786345481873,
-            14.018575010581433
-          ],
-          [
-            74.32844281196594,
-            14.018710331464515
-          ],
-          [
-            74.32879686355591,
-            14.01876237793676
-          ],
-          [
-            74.32936549186707,
-            14.018470917540128
-          ],
-          [
-            74.32954788208008,
-            14.018377233762614
-          ],
-          [
-            74.32992339134216,
-            14.017908814301299
-          ],
-          [
-            74.33010578155518,
-            14.017669399540745
-          ],
-          [
-            74.32953715324402,
-            14.016264133954497
-          ],
-          [
-            74.32898998260498,
-            14.015618749839195
-          ],
-          [
-            74.32697296142578,
-            14.014536165957988
-          ],
-          [
-            74.3261468410492,
-            14.014234290696164
-          ],
-          [
-            74.32520270347595,
-            14.014411252104688
-          ],
-          [
-            74.32477355003357,
-            14.01540015158227
-          ],
-          [
-            74.32450532913208,
-            14.01613922104156
-          ],
-          [
-            74.32443022727966,
-            14.017013610004575
-          ],
-          [
-            74.3243658542633,
-            14.017877586303216
-          ],
-          [
-            74.32447314262389,
-            14.018887289421997
-          ],
-          [
-            74.32443022727966,
-            14.01928284201
-          ],
-          [
-            74.32455897331238,
-            14.019615938397365
-          ],
-          [
-            74.32491302490234,
-            14.019969852779148
-          ],
-          [
-            74.32491302490234,
-            14.020198855911767
-          ],
-          [
-            74.32500958442688,
-            14.020323766615046
-          ]
-    ]
- };
- const simpleLineSymbol = {
-    type: "simple-line",
-    color: [226, 119, 40], // Orange
-    width: 2
- };
+ const polyline = 
+       {
+            type: "polyline",
+            paths: [
+                      [74.32515978813171, 14.02034458505898],
+                      [74.32549238204956, 14.020448677250338],
+          [74.32600736618042, 14.020282129721519],
+          [74.32629704475403, 14.020125991303455],
+          [74.32642579078674, 14.020032308201605],
+          [74.32679057121275, 14.019595119887313],
+          [74.32725191116333, 14.018491736152173],
+          [74.32786345481873, 14.018575010581433],
+          [74.32844281196594, 14.018710331464515],
+          [74.32879686355591, 14.01876237793676],
+          [74.32936549186707, 14.018470917540128],
+          [74.32954788208008, 14.018377233762614],
+          [74.32992339134216, 14.017908814301299],
+          [74.33010578155518, 14.017669399540745],
+          [74.32953715324402, 14.016264133954497],
+          [74.32898998260498, 14.015618749839195],
+          [74.32697296142578, 14.014536165957988],
+          [74.3261468410492, 14.014234290696164],
+          [74.32520270347595, 14.014411252104688],
+          [74.32477355003357, 14.01540015158227],
+          [74.32450532913208, 14.01613922104156],
+          [74.32443022727966, 14.017013610004575],
+          [74.3243658542633, 14.017877586303216],
+          [74.32447314262389, 14.018887289421997],
+          [74.32443022727966, 14.01928284201],
+          [74.32455897331238, 14.019615938397365],
+          [74.32491302490234, 14.019969852779148],
+          [74.32491302490234, 14.020198855911767],
+          [74.32500958442688, 14.020323766615046]
+                      ]
+        };
+ const simpleLineSymbol = 
+       {
+            type: "simple-line",
+            color: [226, 119, 40], // Orange
+            width: 2
+       };
         
- const popupTemplate = {
-    title: "{Name}",
-    content: "{Description}"
- }
- const attributes = {
-    Name: "Graphic",
-    Description: "I am a polygon"
- }
+ const popupTemplate = 
+       {
+            title: "{Name}",
+            content: "{Description}"
+       };
+ const attributes = 
+       {
+           Name: "Graphic",
+           Description: "I am a polygon"
+       };
 
- const polylineGraphic = new Graphic({
-    geometry: polyline,
-    symbol: simpleLineSymbol,
-   attributes: attributes,
-    popupTemplate: popupTemplate
- });
+ const polylineGraphic = new Graphic
+       ({
+            geometry: polyline,
+            symbol: simpleLineSymbol,
+            attributes: attributes,
+            popupTemplate: popupTemplate
+       });
  graphicsLayer.add(polylineGraphic);
- });
+   });
 
 </script>
 </head>
