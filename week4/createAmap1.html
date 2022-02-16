@@ -28,7 +28,7 @@
                "esri/Basemap",
                "esri/layers/VectorTileLayer",
                "esri/layers/TileLayer",], 
-              function (esriConfig,Map, MapView, Graphic, GraphicsLayer, Basemap, VectorTileLayer, TileLayer) {
+              function (esriConfig,Map, MapView, Graphic, GraphicsLayer, Basemap, VectorTileLayer) {
 
         esriConfig.apiKey = "AAPKf95b727aad5c49ef84545ba2e1bece87l9giQmhenhn7erNtb7sWNCeu7I4B2xKnppb3xVVl4uoDcb-i7zEdLgPMQXVSyjgq";
 
@@ -39,9 +39,6 @@
     },
     opacity: .75
   });
-
-
-
   const basemap = new Basemap({
     baseLayers: [
 
@@ -56,8 +53,8 @@
 
         const view = new MapView({
           map: map,
-          center: [14.01663, 74.32708], // Longitude, latitude
-          zoom: 13, // Zoom level
+          center: [74.32708, 14.01663], // Longitude, latitude
+          zoom: 7, // Zoom level
           container: "viewDiv" // Div element
         });
         
