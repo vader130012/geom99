@@ -1,135 +1,5 @@
 
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
 <html>
 <html>
 <head>
@@ -167,7 +37,7 @@
 
   const view = new MapView({
     map: map,
-    center: [-118.80500,34.02700], //Longitude, latitude
+    center: [74.32708,14.01663], //Longitude, latitude
     zoom: 13,
     container: "viewDiv"
  });
@@ -177,8 +47,8 @@
 
  const point = { //Create a point
     type: "point",
-    longitude: -118.80657463861,
-    latitude: 34.0005930608889
+    longitude: 74.32684421539307,
+    latitude: 14.017065656861629
  };
  const simpleMarkerSymbol = {
     type: "simple-marker",
@@ -199,9 +69,129 @@
  const polyline = {
     type: "polyline",
     paths: [
-        [-118.821527826096, 34.0139576938577], //Longitude, latitude
-        [-118.814893761649, 34.0080602407843], //Longitude, latitude
-        [-118.808878330345, 34.0016642996246]  //Longitude, latitude
+       
+           [
+            74.3251758813858,
+            14.02037581272135
+          ],
+          [
+            74.32522416114807,
+            14.02037581272135
+          ],
+          [
+            74.32548701763153,
+            14.02044347264189
+          ],
+          [
+            74.32616293430328,
+            14.02020926513963
+          ],
+          [
+            74.32640433311462,
+            14.020006285110982
+          ],
+          [
+            74.32677984237671,
+            14.019595119887313
+          ],
+          [
+            74.32725727558136,
+            14.018496940804894
+          ],
+          [
+            74.32796001434326,
+            14.018575010581433
+          ],
+          [
+            74.32833552360535,
+            14.018705126816641
+          ],
+          [
+            74.32877540588379,
+            14.018757173290068
+          ],
+          [
+            74.32940304279327,
+            14.018465712886835
+          ],
+          [
+            74.32974636554718,
+            14.01814302415147
+          ],
+          [
+            74.33007359504698,
+            14.017737060259273
+          ],
+          [
+            74.3298214673996,
+            14.016925130320528
+          ],
+          [
+            74.32948887348174,
+            14.01623290573263
+          ],
+          [
+            74.32900607585906,
+            14.015618749839195
+          ],
+          [
+            74.32827651500702,
+            14.015191962572608
+          ],
+          [
+            74.32772397994995,
+            14.014858859764404
+          ],
+          [
+            74.32695150375365,
+            14.014536165957988
+          ],
+          [
+            74.32618975639343,
+            14.014223881197292
+          ],
+          [
+            74.32510614395142,
+            14.014317566670117
+          ],
+          [
+            74.32461261749268,
+            14.015462608248349
+          ],
+          [
+            74.32444095611572,
+            14.016107992802695
+          ],
+          [
+            74.32435512542725,
+            14.017294662892395
+          ],
+          [
+            74.32435512542725,
+            14.01823150336599
+          ],
+          [
+            74.32439804077148,
+            14.019168340015174
+          ],
+          [
+            74.32450532913208,
+            14.019563892118715
+          ],
+          [
+            74.32474136352539,
+            14.019980262017405
+          ],
+          [
+            74.32497739791869,
+            14.020292538945604
+          ],
+          [
+            74.32534217834473,
+            14.020417449597879
+          ]
+     
+     
     ]
  };
  const simpleLineSymbol = {
@@ -210,34 +200,7 @@
     width: 2
  };
 
- const polylineGraphic = new Graphic({
-    geometry: polyline,
-    symbol: simpleLineSymbol
- });
- graphicsLayer.add(polylineGraphic);
-
- // Create a polygon geometry
- const polygon = {
-    type: "polygon",
-    rings: [
-        [-118.818984489994, 34.0137559967283], //Longitude, latitude
-        [-118.806796597377, 34.0215816298725], //Longitude, latitude
-        [-118.791432890735, 34.0163883241613], //Longitude, latitude
-        [-118.79596686535, 34.008564864635],   //Longitude, latitude
-        [-118.808558110679, 34.0035027131376]  //Longitude, latitude
-    ]
- };
-
- const simpleFillSymbol = {
-    type: "simple-fill",
-    color: [227, 139, 79, 0.8],  // Orange, opacity 80%
-    outline: {
-        color: [255, 255, 255],
-        width: 1
-    }
- };
-
- const popupTemplate = {
+   const popupTemplate = {
     title: "{Name}",
     content: "{Description}"
  }
@@ -245,16 +208,16 @@
     Name: "Graphic",
     Description: "I am a polygon"
  }
-
- const polygonGraphic = new Graphic({
-    geometry: polygon,
-    symbol: simpleFillSymbol,
-
-    attributes: attributes,
+   
+ const polylineGraphic = new Graphic({
+    geometry: polyline,
+    symbol: simpleLineSymbol
+     attributes: attributes,
     popupTemplate: popupTemplate
 
  });
- graphicsLayer.add(polygonGraphic);
+ graphicsLayer.add(polylineGraphic);
+
 
  });
 </script>
