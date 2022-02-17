@@ -21,22 +21,32 @@
 
     "esri/Basemap",
     "esri/layers/VectorTileLayer",
-   
+     "esri/layers/TileLayer",
 
-  ], function(esriConfig,Map, MapView, Basemap, VectorTileLayer) {
+  ], function(esriConfig,Map, MapView, Basemap, VectorTileLayer, TileLayer) {
 
     esriConfig.apiKey = "AAPKf95b727aad5c49ef84545ba2e1bece87l9giQmhenhn7erNtb7sWNCeu7I4B2xKnppb3xVVl4uoDcb-i7zEdLgPMQXVSyjgq";
 
   const vectorTileLayer = new VectorTileLayer({
     portalItem: {
-      id: "1b243539f4514b6ba35e7d995890db1d" // Hill shade
+      id: "67ab7f7c535c4687b6518e6d2343e8a2" // Ocean Basemap
     },
     opacity: .75
   });
 
+  const imageTileLayer = new TileLayer({
+    portalItem: {
+      id: "1b243539f4514b6ba35e7d995890db1d" // World Hillshade
+    }
+  });
 
   const basemap = new Basemap({
-    baseLayers: vectorTileLayer,
+    baseLayers: [
+
+      imageTileLayer,
+      vectorTileLayer
+
+    ]
   });
 
 // const apikey = YOUR_API_KEY ;
