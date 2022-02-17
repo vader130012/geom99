@@ -21,9 +21,9 @@
 
     "esri/Basemap",
     "esri/layers/VectorTileLayer",
-    "esri/layers/TileLayer",
+   
 
-  ], function(esriConfig,Map, MapView, Basemap, VectorTileLayer, TileLayer) {
+  ], function(esriConfig,Map, MapView, Basemap, VectorTileLayer) {
 
     esriConfig.apiKey = "AAPKf95b727aad5c49ef84545ba2e1bece87l9giQmhenhn7erNtb7sWNCeu7I4B2xKnppb3xVVl4uoDcb-i7zEdLgPMQXVSyjgq";
 
@@ -34,17 +34,11 @@
     opacity: .75
   });
 
-  const imageTileLayer = new TileLayer({
-    portalItem: {
-      id: "1b243539f4514b6ba35e7d995890db1d" // World Hillshade
-    }
-  });
 
   const basemap = new Basemap({
     baseLayers: [
 
-      imageTileLayer,
-      vectorTileLayer
+           vectorTileLayer
 
     ]
   });
