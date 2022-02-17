@@ -54,12 +54,22 @@
     outline: {
         color: [255, 255, 255], // White
         width: 1
-    }
+             }
  };
+   const popupTemplate = {
+    title: "{Name}",
+    content: "{Description}"
+ }
+ const attributes = {
+    Name: "Graphic",
+    Description: "I am a polygon"
+ }
 
  const pointGraphic = new Graphic({
     geometry: point,
-    symbol: simpleMarkerSymbol
+    symbol: simpleMarkerSymbol,
+    attributes: attributes,
+    popupTemplate: popupTemplate
  });
  graphicsLayer.add(pointGraphic);
 
