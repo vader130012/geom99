@@ -21,11 +21,11 @@
     "esri/config",
     "esri/Map",
     "esri/views/MapView",
-    "esri/layers/FeatureLayer"
+    
     "esri/Graphic",
     "esri/layers/GraphicsLayer"
 
-    ], function(esriConfig,Map, MapView, FeatureLayer, Graphic, GraphicsLayer) {
+    ], function(esriConfig,Map, MapView, Graphic, GraphicsLayer) {
 
   esriConfig.apiKey = "AAPKf95b727aad5c49ef84545ba2e1bece87l9giQmhenhn7erNtb7sWNCeu7I4B2xKnppb3xVVl4uoDcb-i7zEdLgPMQXVSyjgq";
 
@@ -56,20 +56,11 @@
         width: 1
              }
  };
-    const popupTemplate = {
-    title: "{Name}",
-    content: "{Description}"
- }
- const attributes = {
-    Name: "Graphic",
-    Description: "I am a polygon"
- }
+
 
  const pointGraphic = new Graphic({
     geometry: point,
-    symbol: simpleMarkerSymbol,
-    attributes: attributes,
-    popupTemplate: popupTemplate
+    symbol: simpleMarkerSymbol
  });
  graphicsLayer.add(pointGraphic);
 
