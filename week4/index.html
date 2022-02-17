@@ -43,26 +43,6 @@
  const graphicsLayer = new GraphicsLayer();
  map.add(graphicsLayer);
 
- const point = { //Create a point
-    type: "point",
-    longitude: 74.32684421539307,
-    latitude: 14.017065656861629
- };
- const simpleMarkerSymbol = {
-    type: "simple-marker",
-    color: [255, 0, 0], 
-    outline: {
-        color: [255, 255, 255], // White
-        width: 1
-             }
- };
-
-
- const pointGraphic = new Graphic({
-    geometry: point,
-    symbol: simpleMarkerSymbol
- });
- graphicsLayer.add(pointGraphic);
 
     // Create a line geometry
  const polyline = {
@@ -201,8 +181,38 @@
     symbol: simpleLineSymbol
  });
  graphicsLayer.add(polylineGraphic);
+   
+   //Create a point
+    const point = { 
+    type: "point",
+    longitude: 74.32684421539307,
+    latitude: 14.017065656861629
+ };
+ const simpleMarkerSymbol = {
+    type: "simple-marker",
+    color: [255, 0, 0], 
+    outline: {
+        color: [255, 255, 255], // White
+        width: 1
+             }
+ };
+   
+const popupTemplate = {
+    title: "{Name}",
+    content: "{Description}"
+ }
+ const attributes = {
+    Name: "Graphic",
+    Description: "I am a polygon"
+ }
 
-
+ const pointGraphic = new Graphic({
+    geometry: point,
+    symbol: simpleMarkerSymbol,
+    attributes: attributes,
+    popupTemplate: popupTemplate
+ });
+ graphicsLayer.add(pointGraphic);
  });
 </script>
 </head>
