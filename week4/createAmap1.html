@@ -23,14 +23,20 @@
 
         esriConfig.apiKey = "AAPKf95b727aad5c49ef84545ba2e1bece87l9giQmhenhn7erNtb7sWNCeu7I4B2xKnppb3xVVl4uoDcb-i7zEdLgPMQXVSyjgq";
 
+        const vectorTileLayer = new VectorTileLayer
+          ({
+            portalItem: { id: "826498a48bd0424f9c9315214f2165d4"},
+            opacity: .75
+          }); 
+        
         const map = new Map({
-          basemap: "arcgis-topographic" // Basemap layer service
+          basemap: basemap, // Basemap layer service
         });
 
         const view = new MapView({
           map: map,
             center: [74.32708,14.01663], // Longitude, latitude
-            zoom: 10, // Zoom level
+            zoom: 13, // Zoom level
           container: "viewDiv" // Div element
         });
 
